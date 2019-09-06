@@ -19,12 +19,13 @@ public class Main
         bank.add(new Dollar());
         bank.add(new Penny(10, 0));
 
-
+        System.out.println("*****FIRST*****");
         for (int coin = 0; coin < bank.size(); coin++)
         {
             System.out.println(bank.get(coin).toString());
         }
 
+        System.out.println("*****SECOND-Getting balance of piggy bank*****");
         for (int coin = 0; coin < bank.size(); coin++)
         {
             bal += bank.get(coin).getBal();
@@ -37,7 +38,6 @@ public class Main
 
         for (int coin = 0; coin < bank.size(); coin++)
         {
-            // bank.remove(new Dollar(1, 0));
             reducedBal -= bank.get(coin).getBal();
         }
 
