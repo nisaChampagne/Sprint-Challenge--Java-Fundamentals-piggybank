@@ -4,12 +4,12 @@ public class Dollar extends AbstractMoney
 {
     public Dollar()
     {
-        super(1, "Dollar", 1.00);
+        super(1, "Dollar", 1.00,0);
     }
 
-    public Dollar (int amount)
+    public Dollar(int amountStored, int reducedStoredAmount)
     {
-        super(amount,"Dollar", 1.00);
+        super(amountStored,"Dollar", 1.00,0);
     }
 
     @Override

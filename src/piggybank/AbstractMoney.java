@@ -3,6 +3,7 @@ package piggybank;
 public abstract class AbstractMoney
 {
     int amountStored;
+    int reducedAmountStored = -1;
     String name;
     double value;
     int originalDeposit;
@@ -13,11 +14,12 @@ public abstract class AbstractMoney
         amountStored = 1;
     }
 
-    public AbstractMoney(int amountStored, String name, double value)
+    public AbstractMoney(int amountStored, String name, double value, int reducedAmountStored)
     {
         this.name = name;
         this.value = value;
         this.amountStored = amountStored;
+        this.reducedAmountStored = reducedAmountStored;
     }
 
     public String getAmountStored()
@@ -35,6 +37,11 @@ public abstract class AbstractMoney
         return value * amountStored;
     }
 
+    public double getReducedBal()
+    {
+        return value * reducedAmountStored;
+    }
+
     public String getName()
     {
         return name;
@@ -45,9 +52,9 @@ public abstract class AbstractMoney
     {
         if (amountStored > 1)
         {
-            return "\n" + amountStored + " " + name + "s";
+            return amountStored + " " + name + "s";
         } else {
-            return "\n" + amountStored + " " + name;
+            return  amountStored + " " + name;
         }
     }
 }

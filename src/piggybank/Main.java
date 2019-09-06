@@ -7,15 +7,17 @@ public class Main
     public static void main(String[] args)
     {
         DecimalFormat fp = new DecimalFormat("$###,###.00");
-        double bal = 0;
+        double bal = 0.0;
+        double reducedBal = 0.0;
+
         ArrayList<AbstractMoney> bank = new ArrayList<>();
         bank.add(new Quarter());
         bank.add(new Dime());
-        bank.add(new Dollar(5));
-        bank.add(new Nickel(3));
-        bank.add(new Dime(7));
+        bank.add(new Dollar(5, 1));
+        bank.add(new Nickel(3,0));
+        bank.add(new Dime(7, 0));
         bank.add(new Dollar());
-        bank.add(new Penny(10));
+        bank.add(new Penny(10, 0));
 
 
         for (int coin = 0; coin < bank.size(); coin++)
@@ -28,11 +30,25 @@ public class Main
             bal += bank.get(coin).getBal();
         }
 
+        // for (int newC = 0; newC < 1; newC++)
+        // {
+        //     bank.add(new Dollar(4,0));
+        // }
+
+        for (int coin = 0; coin < bank.size(); coin++)
+        {
+            // bank.remove(new Dollar(1, 0));
+            reducedBal -= bank.get(coin).getBal();
+        }
+
         for (int i = 0; i < 3; i++)
         {
             System.out.println();
         }
 
-        System.out.println("The Piggy Bank Holds " + fp.format(bal));
+        System.out.println("My Piggie has " + fp.format(bal));
+        // System.out.println("New bal: " + bank);
+        System.out.println("Oh noes my piggy has " + fp.format(reducedBal));
+
     }
 }

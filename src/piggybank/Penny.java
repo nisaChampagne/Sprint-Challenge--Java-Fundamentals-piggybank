@@ -4,11 +4,11 @@ public class Penny extends AbstractMoney
 {
     public Penny()
     {
-        super(1, "Penny", 0.01);
+        super(1, "Penny", 0.01, 0);
     }
 
-    public Penny (int amount)
+    public Penny (int amountStored, int reducedStoredAmount)
     {
-        super(amount,"Penny", 0.01);
+        super(amountStored,"Penny", 0.01, 0);
     }
 }

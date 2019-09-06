@@ -4,11 +4,11 @@ public class Nickel extends AbstractMoney
 {
     public Nickel()
     {
-        super(1, "Nickel", 0.05);
+        super(1, "Nickel", 0.05,0);
     }
 
-    public Nickel (int amount)
+    public Nickel (int amountStored, int reducedStoredAmount)
     {
-        super(amount,"Nickel", 0.05);
+        super(amountStored,"Nickel", 0.05,0);
     }
 }

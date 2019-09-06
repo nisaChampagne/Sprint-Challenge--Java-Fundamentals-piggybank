@@ -4,11 +4,11 @@ public class Quarter extends AbstractMoney
 {
     public Quarter()
     {
-        super(1, "Quarter", 0.25);
+        super(1, "Quarter", 0.25,0);
     }
 
-    public Quarter (int amount)
+    public Quarter (int amountStored, int reducedStoredAmount)
     {
-        super(amount,"Quarter", 0.25);
+        super(amountStored,"Quarter", 0.25,0);
     }
 }
