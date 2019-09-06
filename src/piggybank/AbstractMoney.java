@@ -1,19 +1,20 @@
 package piggybank;
 
-public abstract class AbstractMoney
+public abstract class AbstractMoney///abstract so I can extend the usage amongst coins
 {
-    int amountStored = 1;
-    int reducedAmountStored = -1;
+///blue print for coins 
+    int amountStored;
+    int reducedAmountStored;
     String name;
     double value;
     int originalDeposit;
 
-
+///default constructor/// if i comment this out it doesnt break anything
     public AbstractMoney()
     {
         amountStored = 1;
     }
-
+////constructor/setters technically to get needed variables values  via super
     public AbstractMoney(int amountStored, String name, double value, int reducedAmountStored)
     {
         this.name = name;
@@ -22,31 +23,25 @@ public abstract class AbstractMoney
         this.reducedAmountStored = reducedAmountStored;
     }
 
+///getters needed for main
     public String getAmountStored()
     {
         return this.amountStored + " " + this.name;
     }
 
-    public double getValue()
-    {
-        return value;
-    }
-
+///getbal for main to get balance after added coins
     public double getBal()
     {
         return value * amountStored;
     }
 
+///getReducedbal for main to get balance after removed coins
     public double getReducedBal()
     {
         return value * reducedAmountStored;
     }
 
-    public String getName()
-    {
-        return name;
-    }
-
+    //string to help with plural
     @Override
     public String toString()
     {

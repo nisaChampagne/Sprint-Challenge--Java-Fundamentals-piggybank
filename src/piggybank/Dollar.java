@@ -11,4 +11,15 @@ public class Dollar extends AbstractMoney
     {
         super(amountStored,"Dollar", 1.00,0);
     }
+
+    @Override
+    public String toString()
+    {
+        if (amountStored > 1)
+        {
+            return "Number of " + name + "- " + "$" + amountStored + " " + name + "s";
+        } else {
+            return  "Number of " + name + "- " + "$" + amountStored + " " + name;
+        }
+    }
 }
