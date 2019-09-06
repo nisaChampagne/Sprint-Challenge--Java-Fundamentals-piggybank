@@ -2,7 +2,7 @@ package piggybank;
 
 public abstract class AbstractMoney
 {
-    int amountStored;
+    int amountStored = 1;
     int reducedAmountStored = -1;
     String name;
     double value;
@@ -52,9 +52,9 @@ public abstract class AbstractMoney
     {
         if (amountStored > 1)
         {
-            return amountStored + " " + name + "s";
+            return "Number of " + name + "- " + amountStored + " " + name + "s";
         } else {
-            return  amountStored + " " + name;
+            return  "Number of " + name + "- " + amountStored + " " + name;
         }
     }
 }
